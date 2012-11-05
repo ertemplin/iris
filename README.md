@@ -8,8 +8,8 @@ Features
 ========
 
 * Text messaging app, works across windows phone / Android.
-    * Start on Android
-* People who don’t have the app can be contacted through Facebook
+    * Start on Android.
+* People who don't have the app can be contacted through Facebook
     * Possible add in. Not initial feature
 * Send pictures/video/audio
     * Definitely going to be initial feature
