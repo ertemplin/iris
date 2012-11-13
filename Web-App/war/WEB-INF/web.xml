@@ -2,6 +2,16 @@
 
   <!-- Servlets -->
   <servlet>
+      <servlet-name>phoneSignInServlet</servlet-name>
+      <servlet-class>edu.purdue.cs.iris.server.PhoneSignInServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+      <servlet-name>phoneSignInServlet</servlet-name>
+      <url-pattern>/phoneSignIn</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
     <servlet-name>greetServlet</servlet-name>
     <servlet-class>edu.purdue.cs.iris.server.GreetingServiceImpl</servlet-class>
   </servlet>
