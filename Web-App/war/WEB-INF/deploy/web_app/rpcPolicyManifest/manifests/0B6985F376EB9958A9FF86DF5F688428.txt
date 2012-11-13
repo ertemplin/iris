@@ -1,0 +1,2 @@
+serviceClass: edu.purdue.cs.iris.client.GreetingService
+path: 700EE60A0B4DF0FBB4DB75A82C613F1A.gwt.rpc
