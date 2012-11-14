@@ -3,6 +3,12 @@ iris
 
 Purdue ACM SigApp project started Fall 2012
 
+Repository Layout
+=================
+* Iris-Android-App
+   * Android client app for Iris
+* Web-App
+   * Google App Engine web app for storing and relaying messages.
 
 Features
 ========
