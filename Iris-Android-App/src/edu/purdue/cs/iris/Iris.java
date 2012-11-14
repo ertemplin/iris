@@ -9,7 +9,7 @@ public class Iris extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_iris);
+        setContentView(R.layout.message_interface);
     }
 
     @Override
