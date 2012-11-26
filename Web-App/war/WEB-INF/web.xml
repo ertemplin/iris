@@ -10,6 +10,16 @@
       <servlet-name>phoneSignInServlet</servlet-name>
       <url-pattern>/phoneSignIn</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+      <servlet-name>phonePushNotificationServlet</servlet-name>
+      <servlet-class>edu.purdue.cs.iris.server.PhonePushNotificationServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+      <servlet-name>phonePushNotificationServlet</servlet-name>
+      <url-pattern>/sendMessageToPhone</url-pattern>
+  </servlet-mapping>
     
   <servlet>
     <servlet-name>greetServlet</servlet-name>
