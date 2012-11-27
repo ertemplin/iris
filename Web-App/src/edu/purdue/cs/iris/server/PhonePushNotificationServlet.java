@@ -14,6 +14,7 @@ import com.google.android.gcm.server.Sender;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 
@@ -24,15 +25,19 @@ public class PhonePushNotificationServlet extends HttpServlet {
 		Sender sender = new Sender("274242247098");
 		
 		Query allDevices = new Query("Device");
-		PreparedQuery pq = datastore.prepare(allDevices);
-		List<Entity> list = pq.asList(null);
+		//PreparedQuery pq = datastore.prepare(allDevices);
+		//List<Entity> list = pq.asList(null);
+		
+		// Apparently asList() requires a fetchoptions thingy to limit the number of results.
+		// The API recommends that we use an iterator if we want to work on larger datasets
+		List<Entity> list = datastore.prepare(allDevices).asList(FetchOptions.Builder.withLimit(10));
+		
 		for(Entity e : list) {
 			String deviceId = (String) e.getProperty("DeviceID");
 			Message message = new Message.Builder().build();
 			try {
 				Result result = sender.send(message, deviceId, 5);
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		}
