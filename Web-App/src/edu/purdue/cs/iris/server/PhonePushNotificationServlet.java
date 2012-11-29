@@ -22,7 +22,7 @@ public class PhonePushNotificationServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-		Sender sender = new Sender("274242247098");
+		Sender sender = new Sender("AIzaSyA60cBwRw0eVB63s06KebBvI2MhjZaWO0I");
 		
 		Query allDevices = new Query("Device");
 		//PreparedQuery pq = datastore.prepare(allDevices);
@@ -34,7 +34,7 @@ public class PhonePushNotificationServlet extends HttpServlet {
 		
 		for(Entity e : list) {
 			String deviceId = (String) e.getProperty("DeviceID");
-			Message message = new Message.Builder().build();
+			Message message = new Message.Builder().addData("Key Test", Double.toString(Math.random())).build();
 			try {
 				Result result = sender.send(message, deviceId, 5);
 			} catch (IOException e1) {
